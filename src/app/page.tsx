@@ -16,7 +16,7 @@ export default function Home() {
 
     var tabelaHTML = "<div>\n";
     tabelaHTML +=
-      '  <h1 style="text-align: center; titulo-categoria">' +
+      '  <h1 style="text-align: center;" class="titulo-categoria">' +
       titulo +
       "</h1>\n";
     tabelaHTML += '    <table style="width: 100%; font-size: 14pt">\n';
