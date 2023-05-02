@@ -2,6 +2,8 @@
 import { useState } from "react";
 
 export default function Home() {
+  const [showModal, setShowModal] = useState(false);
+
   const [titulo, setTitulo] = useState("");
   const [colunas, setColunas] = useState([{ label: "", value: "" }]);
   const [html, setHtml] = useState("");
@@ -71,8 +73,35 @@ export default function Home() {
     setColunas(newColunas);
   }
 
+  function handleShowModal() {
+    setShowModal(true);
+  }
+
+  function handleCloseModal() {
+    setShowModal(false);
+  }
+
+  function handlePasteHtml(event: any) {
+    setHtml(event.target.value);
+    handleCloseModal();
+  }
+
   return (
     <main className="w-full flex flex-col items-center justify-center bg-[#f6f6f8] min-h-screen">
+      {/* {showModal && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={handleCloseModal}>
+              &times;
+            </span>
+            <h2>Editar HTML</h2>
+            <textarea onChange={handlePasteHtml} />
+          </div>
+        </div>
+      )}
+
+      <button onClick={handleShowModal}>Editar HTML</button> */}
+
       <div className="border-[0.1rem] border-[#dadee1] rounded-md bg-white w-full max-w-2xl">
         <div className="text-center p-4">
           <h1 className="text-[#574967]">Construtor de tabela</h1>
