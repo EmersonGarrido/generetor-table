@@ -63,6 +63,12 @@ export default function Home() {
     setColunas([...colunas, { label: "", value: "" }]);
   }
 
+  function removerColuna(index: number) {
+    const newColunas = [...colunas];
+    newColunas.splice(index, 1);
+    setColunas(newColunas);
+  }
+
   return (
     <main className="w-full flex flex-col items-center justify-center bg-[#f6f6f8] min-h-screen">
       <div className="border-[0.1rem] border-[#dadee1] rounded-md bg-white w-full max-w-2xl">
@@ -104,6 +110,13 @@ export default function Home() {
                 value={coluna.value}
                 onChange={(event) => handleValueChange(event, index)}
               />
+
+              <button
+                className="bg-red-600 hover:bg-red-900 text-white rounded-md px-4 py-2"
+                onClick={() => removerColuna(index)}
+              >
+                Excluir
+              </button>
             </div>
           ))}
         </div>
