@@ -47,8 +47,10 @@ export default function Home() {
         '        <tr style="background-color: ' +
         cor +
         '; color: #6d6d6d; height: 40px;">\n';
-      tabelaHTML += "          <td>" + colunaLabels[i] + "</td>\n";
-      tabelaHTML += "          <td>" + colunaValues[i] + "</td>\n";
+      tabelaHTML +=
+        '          <td style="width: 50%;">' + colunaLabels[i] + "</td>\n";
+      tabelaHTML +=
+        '          <td style="width: 50%;">' + colunaValues[i] + "</td>\n";
       tabelaHTML += "        </tr>\n";
     }
 
