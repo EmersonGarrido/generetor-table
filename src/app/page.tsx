@@ -39,8 +39,10 @@ export default function Home() {
     tabelaHTML += '    <table style="width: 100%; font-size: 14pt">\n';
     tabelaHTML += "      <tbody>\n";
 
+    const cores = ["#e5e5e5", "#ffffff", "#e5e5e5", "#ffffff"];
+
     for (var i = 0; i < colunas.length; i++) {
-      var cor = i === 0 ? "#e5e5e5" : "#fff";
+      var cor = cores[i % cores.length];
       tabelaHTML +=
         '        <tr style="background-color: ' +
         cor +
@@ -60,8 +62,9 @@ export default function Home() {
   function addColuna() {
     setColunas([...colunas, { label: "", value: "" }]);
   }
+
   return (
-    <main className="w-full flex flex-col items-center justify-center bg-[#f6f6f8] min-h-full">
+    <main className="w-full flex flex-col items-center justify-center bg-[#f6f6f8] min-h-screen">
       <div className="border-[0.1rem] border-[#dadee1] rounded-md bg-white w-full max-w-2xl">
         <div className="text-center p-4">
           <h1 className="text-[#574967]">Construtor de tabela</h1>
@@ -130,7 +133,7 @@ export default function Home() {
         </div>
       </div>
       <span className="mt-5 font-thin text-sm text-center">
-        Todos os direitos reservados a
+        Todos os direitos reservados a{" "}
         <a className="font-normal" href="https://emersongarrido.com.br">
           Emerson Garrido
         </a>
