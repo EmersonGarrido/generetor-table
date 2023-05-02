@@ -61,7 +61,7 @@ export default function Home() {
     setColunas([...colunas, { label: "", value: "" }]);
   }
   return (
-    <main className="w-full flex flex-col items-center justify-center bg-[#f6f6f8] h-screen">
+    <main className="w-full flex flex-col items-center justify-center bg-[#f6f6f8] min-h-full">
       <div className="border-[0.1rem] border-[#dadee1] rounded-md bg-white w-full max-w-2xl">
         <div className="text-center p-4">
           <h1 className="text-[#574967]">Construtor de tabela</h1>
